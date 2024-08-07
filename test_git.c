@@ -14,11 +14,11 @@ void sort(int arr[],int size)
    {
    for (int j = 0; i < size - 1; ++j )
    {
-   	if(arr[j] > arr[j+1])
+   	if(arr[j] < arr[j+1])//从大到小排列
 	{
-	tmp = arr[j];
-	arr[j] = arr[j + 1];
-	arr[j + 1] = tmp;
+		tmp = arr[j];
+		arr[j] = arr[j + 1];
+		arr[j + 1] = tmp;
 	
 	}
    }
