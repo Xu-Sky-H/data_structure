@@ -3,7 +3,7 @@
  * @version: 
  * @Author: sky.xu
  * @Date: 2024-08-07 10:32:24
- * @LastEditTime: 2024-08-07 14:26:08
+ * @LastEditTime: 2024-08-07 14:30:29
  * @FilePath: \data_structure\test_git.c
  */
 #include <stdio.h>
@@ -19,7 +19,7 @@ void sort(int arr[],int size)
 	tmp = arr[j];
 	arr[j] = arr[j + 1];
 	arr[j + 1] = tmp;
-	
+	printf("sky");
 	}
    }
    
