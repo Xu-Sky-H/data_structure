@@ -1,9 +1,9 @@
 /*
- * @Descripttion: 
- * @version: 
+ * @Descripttion:
+ * @version:
  * @Author: sky.xu
  * @Date: 2024-08-09 14:31:29
- * @LastEditTime: 2024-08-09 15:36:30
+ * @LastEditTime: 2024-08-12 15:28:55
  * @FilePath: \Git_Sky_code\data_structure\leetcode_4.c
  */
 /* * @Descripttion: 给定两个大小分别为 m 和 n 的正序（从小到大）数组 nums1 和 nums2。请你找出并返回这两个正序数组的 中位数 。
@@ -14,7 +14,7 @@
 输出：2.00000
 解释：合并数组 = [1,2,3] ，中位数 2*/
 #include <stdio.h>
-
+#include <stdlib.h>
 double findMedianSortedArrays(int *nums1, int nums1Size, int *nums2, int nums2Size)
 {
     int m = nums1Size + nums2Size;
@@ -44,13 +44,13 @@ double findMedianSortedArrays(int *nums1, int nums1Size, int *nums2, int nums2Si
     printf("----------------------%d\n", m);
     printf("----------------------%d\n", m % 2);
     printf("----------------------%.2f\n", m / 2);
-    if ((m % 2) == 0)//因为这里没有加括号 导致出了一些bug 这是运算的优先级的问题
+    if ((m % 2) == 0) // 因为这里没有加括号 导致出了一些bug 这是运算的优先级的问题
     {
         Mid_Val = ((*(nums1 + (int)(m / 2)) + *(nums1 + ((int)(m / 2) - 1)))) / 2.0;
     }
     else
     {
-        Mid_Val = 99;//(*(nums1 + (int)(m / 2)));
+        Mid_Val = 99; //(*(nums1 + (int)(m / 2)));
     }
 
     return Mid_Val;
@@ -58,12 +58,16 @@ double findMedianSortedArrays(int *nums1, int nums1Size, int *nums2, int nums2Si
 
 int main()
 {
-    int num1[100]; // 第一声明称空数组报错（不给初值） 二给了初值后会发现乱存
-    int num2[100];
+    // int num1[100]; // 第一声明称空数组报错（不给初值） 二给了初值后会发现乱存
+    // int num2[100];
     double res = 0;
+    int *num1;
+    int *num2;
     int size1 = 0, size2 = 0, temp = 0;
     printf("请输入两个数组的大小\n");
     scanf("%d%d", &size1, &size2);
+    num1 = (int *)malloc(size1 * sizeof(int));
+    num2 = (int *)malloc(size2 * sizeof(int));
     printf("数组1和数组2的大小分别为：%d,%d\n", size1, size2);
     for (int u = 0; u < size1; u++)
     {
@@ -84,4 +88,7 @@ int main()
     }
     res = findMedianSortedArrays(num1, size1, num2, size2);
     printf("%.2f", res);
+    free(num1);
+    free(num2);
+    return 0;
 }
