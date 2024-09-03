@@ -11,8 +11,8 @@
  * @version: 主要是理解字符串 数组 指针之间的一个访问关系 字符串数组就是一个二维数组 对应的是二级指针 还有一些关于字符串的C库函数
  * @Author: sky.xu
  * @Date: 2024-08-11 19:59:45
- * @LastEditTime: 2024-08-13 10:59:44
- * @FilePath: \Git_Sky_code\data_structure\Arry\leetcode_68.c
+ * @LastEditTime: 2024-08-18 14:49:04
+ * @FilePath: \data_structure\Arry\leetcode_68.c
  */
 #include <stdlib.h>
 
